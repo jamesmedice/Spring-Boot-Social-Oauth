@@ -7,17 +7,15 @@ jasypt:
 
 spring:
   datasource:
-    password: ENC(B93dV+0StPgkH+jnZWe35A==)
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DATABASE_HOST:127.0.0.1}:${DATABASE_PORT:3306}/${DATABASE_NAME:socialoauth2}?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
     username: ${DATABASE_USER:root}
+    password: ENC(B93dV+0StPgkH+jnZWe35A==)
     initialization-mode: always
     initialize: true
-    schema: classpath:/schema.sql
-    data: classpath:/data.sql
   jpa:
     hibernate:
-        ddl-auto: none
+      ddl-auto: none
     show-sql: true
     generate-ddl: false
     properties:
@@ -28,8 +26,8 @@ spring:
       client:
         registration:
           google:
-            clientId: 546618821556-ruqn8t5gcqals9m3a2li68fnhokhskni.apps.googleusercontent.com
-            clientSecret: eZJRiJNPTkwIo_qjBjA1X5Ok
+            clientId: 546618821556-pmu27o7emafo6sptkupqo446305hou0q.apps.googleusercontent.com
+            clientSecret: WIJr6E3XYLQL0gZYolcCnciN
             scope:
               - email
               - profile
@@ -39,12 +37,6 @@ spring:
             scope:
               - email
               - public_profile
-          github:
-            clientId: c11dfe648139a5daebb8
-            clientSecret: 611c495eefcbc2b4411c4efeaf18502bee7332e5
-            scope:
-              - user:email
-              - read:user
         provider:
           facebook:
             authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
